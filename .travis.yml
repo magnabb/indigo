@@ -1,0 +1,29 @@
+language: php
+
+sudo: false
+
+git:
+    depth: 1
+
+env:
+    global:
+        - MIN_PHP=5.5.9
+
+php:
+    - 5.5.9
+
+before_script:
+#  - cp app/config/parameters.yml.travis app/config/parameters.yml
+  - cp phpunit.xml.dist phpunit.xml
+  - composer self-update
+  - composer update --prefer-dist --no-interaction --prefer-stable
+#  - php bin/console doctrine:database:create --env=test
+#  - php bin/console doctrine:schema:create --env=test
+#  - php bin/console doctrine:fixtures:load -n --env=test
+
+script:
+  - phpunit
+
+notifications:
+  email:
+    -  baz.prooduction@gmail.com
