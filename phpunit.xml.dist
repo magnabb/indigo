@@ -6,6 +6,12 @@
          backupGlobals="false"
          colors="true"
          bootstrap="app/autoload.php"
+         verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
 >
     <php>
         <ini name="error_reporting" value="-1" />
@@ -27,5 +33,8 @@
                 <directory>src/*/Bundle/*Bundle/Resources</directory>
             </exclude>
         </whitelist>
+        <blacklist>
+            <directory suffix=".php">./vendor</directory>
+        </blacklist>
     </filter>
 </phpunit>
