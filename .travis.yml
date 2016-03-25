@@ -10,20 +10,19 @@ env:
         - MIN_PHP=5.5.9
 
 php:
-    - 5.5
+    - 5.5.9
 
 before_script:
 #  - cp app/config/parameters.yml.travis app/config/parameters.yml
   - cp phpunit.xml.dist phpunit.xml
+  - composer self-update
   - composer update --prefer-dist --no-interaction --prefer-stable
-#  - php app/console doctrine:database:create --env=test
-#  - php app/console doctrine:schema:create --env=test
-#  - php app/console doctrine:fixtures:load -n --env=test
+#  - php bin/console doctrine:database:create --env=test
+#  - php bin/console doctrine:schema:create --env=test
+#  - php bin/console doctrine:fixtures:load -n --env=test
 
-#script:
-#  - phpunit -c src
-
-script: vendor/bin/phpunit
+script:
+  - phpunit
 
 notifications:
   email:
