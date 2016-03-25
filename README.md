@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/magnabb/indigo.svg?branch=master)](https://travis-ci.org/magnabb/indigo)
+master:[![Build Status](https://travis-ci.org/magnabb/indigo.svg?branch=master)](https://travis-ci.org/magnabb/indigo)
+develop:[![Build Status](https://travis-ci.org/magnabb/indigo.svg?branch=develop)](https://travis-ci.org/magnabb/indigo)
 indigo
 ======
 
